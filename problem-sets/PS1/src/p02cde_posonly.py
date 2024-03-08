@@ -28,8 +28,16 @@ def main(train_path, valid_path, test_path, pred_path):
     # *** START CODE HERE ***
     # Part (c): Train and test on true labels
     # Make sure to save outputs to pred_path_c
+
     # Part (d): Train on y-labels and test on true labels
     # Make sure to save outputs to pred_path_d
     # Part (e): Apply correction factor using validation set and test on true labels
     # Plot and use np.savetxt to save outputs to pred_path_e
     # *** END CODER HERE
+
+pred_path = None
+if __name__ == '__main__':
+    main(train_path='data/ds3_train.csv',
+         valid_path='data/ds3_valid.csv',
+         test_path='data/ds3_test.csv',
+         pred_path)
