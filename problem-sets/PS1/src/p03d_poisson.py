@@ -4,7 +4,7 @@ import util
 from linear_model import LinearModel
 
 
-def main(lr, train_path, eval_path, pred_path):
+def main(lr, train_path, eval_path, pred_path=None):
     """Problem 3(d): Poisson regression with gradient ascent.
 
     Args:
@@ -15,6 +15,10 @@ def main(lr, train_path, eval_path, pred_path):
     """
     # Load training set
     x_train, y_train = util.load_dataset(train_path, add_intercept=False)
+    x_eval, y_eval = util.load_dataset(eval_path, add_intercept=False)
+    my_poisson = PoissonRegression()
+    my_poisson.fit(x_train, y_train)
+    my_poisson.predict(x_eval)
 
     # *** START CODE HERE ***
     # Fit a Poisson Regression model
@@ -52,3 +56,7 @@ class PoissonRegression(LinearModel):
         """
         # *** START CODE HERE ***
         # *** END CODE HERE ***
+
+
+if __name__ == '__main__':
+    main()
