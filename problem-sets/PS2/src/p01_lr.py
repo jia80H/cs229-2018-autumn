@@ -3,6 +3,11 @@
 import util
 import numpy as np
 
+import os
+
+print(os.getcwd())
+os.chdir('./problem-sets/PS2')
+
 
 def calc_grad(X, Y, theta):
     """Compute the gradient of the loss with respect to theta."""
@@ -37,11 +42,11 @@ def logistic_regression(X, Y):
 
 def main():
     print('==== Training model on data set A ====')
-    Xa, Ya = util.load_csv('../data/ds1_a.csv', add_intercept=True)
+    Xa, Ya = util.load_csv('./data/ds1_a.csv', add_intercept=True)
     logistic_regression(Xa, Ya)
 
     print('\n==== Training model on data set B ====')
-    Xb, Yb = util.load_csv('../data/ds1_b.csv', add_intercept=True)
+    Xb, Yb = util.load_csv('./data/ds1_b.csv', add_intercept=True)
     logistic_regression(Xb, Yb)
 
 
